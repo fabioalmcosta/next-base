@@ -1,5 +1,17 @@
 import Drawer from './drawer';
-import { useDisclosure, Center, IconButton, Icon, Box, useColorMode, Button } from "@chakra-ui/react";
+import {
+  useDisclosure,
+  Center,
+  IconButton,
+  Icon,
+  Box,
+  useColorMode,
+  Button,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem
+} from "@chakra-ui/react";
 import { FaBars, FaMoon, FaBell, FaEnvelope, FaAngleDown } from "react-icons/fa";
 
 const Navbar = () => {
@@ -35,13 +47,18 @@ const Navbar = () => {
               aria-label="Send email"
               icon={<Icon as={FaMoon} />}
             />
-            <Button
-              onClick={toggleColorMode}
-
-              rightIcon={<Icon as={FaAngleDown} />}
-              variant="ghost">
-              Fábio Costa
-            </Button>
+            <Menu>
+              <MenuButton as={Button} variant="ghost" rightIcon={<Icon as={FaAngleDown} />}>
+                Fábio Costa
+              </MenuButton>
+              <MenuList>
+                <MenuItem>Download</MenuItem>
+                <MenuItem>Create a Copy</MenuItem>
+                <MenuItem>Mark as Draft</MenuItem>
+                <MenuItem>Delete</MenuItem>
+                <MenuItem>Attend a Workshop</MenuItem>
+              </MenuList>
+            </Menu>
           </Center>
         </Box>
       </Box>

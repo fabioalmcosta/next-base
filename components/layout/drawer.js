@@ -7,19 +7,18 @@ import {
   DrawerContent,
   DrawerCloseButton,
 } from "@chakra-ui/react";
+import Menu from './menu';
 
 const Component = ({ isOpen, onClose }) => {
   return (
     <>
-      <Drawer placement={'left'} onClose={onClose} isOpen={isOpen}>
+      <Drawer size={'xs'} placement={'left'} onClose={onClose} isOpen={isOpen}>
         <DrawerOverlay>
           <DrawerContent>
             <DrawerCloseButton />
             <DrawerHeader borderBottomWidth="1px">Basic Drawer</DrawerHeader>
             <DrawerBody>
-              <p>Some contents...</p>
-              <p>Some contents...</p>
-              <p>Some contents...</p>
+              <Menu />
             </DrawerBody>
           </DrawerContent>
         </DrawerOverlay>
