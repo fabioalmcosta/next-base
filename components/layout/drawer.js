@@ -16,8 +16,8 @@ const Component = ({ isOpen, onClose }) => {
         <DrawerOverlay>
           <DrawerContent>
             <DrawerCloseButton />
-            <DrawerHeader borderBottomWidth="1px">Basic Drawer</DrawerHeader>
-            <DrawerBody>
+            <DrawerHeader borderBottomWidth="1px">Fábio Almeida Costa</DrawerHeader>
+            <DrawerBody p={0}>
               <Menu />
             </DrawerBody>
           </DrawerContent>

@@ -11,11 +11,12 @@ import {
   useColorMode,
   IconButton,
 } from '@chakra-ui/react';
-import { FaUserAlt, FaLock, FaMoon } from 'react-icons/fa';
+import { FaUserAlt, FaLock, FaMoon, FaSun } from 'react-icons/fa';
 
 const Component = () => {
   const [loading, setLoading] = useState(false);
   const { colorMode, toggleColorMode } = useColorMode()
+  const themeIcon = colorMode === 'light' ? FaMoon : FaSun;
 
   const onSubmit = (values) => {
     setLoading(!loading);
@@ -31,7 +32,7 @@ const Component = () => {
         onClick={toggleColorMode}
         variant="ghost"
         aria-label="Send email"
-        icon={<Icon as={FaMoon} />}
+        icon={<Icon as={themeIcon} />}
       />
       <Center margin="auto" w="100%" h="100%">
         <Box

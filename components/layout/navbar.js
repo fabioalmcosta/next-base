@@ -12,15 +12,16 @@ import {
   MenuList,
   MenuItem
 } from "@chakra-ui/react";
-import { FaBars, FaMoon, FaBell, FaEnvelope, FaAngleDown } from "react-icons/fa";
+import { FaBars, FaMoon, FaBell, FaEnvelope, FaAngleDown, FaSun } from "react-icons/fa";
 
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const { colorMode, toggleColorMode } = useColorMode()
+  const { colorMode, toggleColorMode } = useColorMode();
+  const themeIcon = colorMode === 'light' ? FaMoon : FaSun;
 
   return (
     <>
-      <Box position="fixed" boxShadow="dark-lg" h="3.5em" w="100%" p={2}>
+      <Box boxShadow="dark-lg" h="3.5em" w="100%" p={2}>
         <IconButton
           onClick={onOpen}
           variant="ghost"
@@ -45,7 +46,7 @@ const Navbar = () => {
               onClick={toggleColorMode}
               variant="ghost"
               aria-label="Send email"
-              icon={<Icon as={FaMoon} />}
+              icon={<Icon as={themeIcon} />}
             />
             <Menu>
               <MenuButton as={Button} variant="ghost" rightIcon={<Icon as={FaAngleDown} />}>
