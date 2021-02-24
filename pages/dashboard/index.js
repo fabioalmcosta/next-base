@@ -1,7 +1,8 @@
 import Layout from '../../components/layout/layout';
-import { Box, Grid, GridItem, Heading, Container } from "@chakra-ui/react";
+import { Box, Grid, GridItem, Heading, Container, Center } from "@chakra-ui/react";
 import LineChart from '../../components/charts/lineChart';
 import PieChart from '../../components/charts/pieChart';
+import AreaChart from '../../components/charts/areaChart';
 
 const Dashboard = () => {
   const dataLineChart = [
@@ -61,10 +62,10 @@ const Dashboard = () => {
         gap={4}
       >
         <GridItem boxShadow="dark-lg" rowSpan={4} colSpan={3} borderWidth="1px" borderRadius="lg" p={4}>
-        <Heading as="h5" size="sm">
-          Acessos de hoje
+          <Heading as="h5" size="sm">
+            Acessos de hoje
         </Heading>
-            <LineChart data={dataLineChart}/>
+          <LineChart data={dataLineChart} />
         </GridItem>
         <GridItem boxShadow="dark-lg" rowSpan={3} colSpan={3} borderWidth="1px" borderRadius="lg" p={4}>
           <Container>
@@ -80,7 +81,23 @@ const Dashboard = () => {
           </Heading>
           <PieChart />
         </GridItem>
-        <GridItem boxShadow="dark-lg" rowSpan={1} colSpan={3} bg="tomato" />
+        <GridItem boxShadow="dark-lg" rowSpan={1} colSpan={3} bg="tomato">
+          <Center>
+            There are many benefits to a joint design and development system.
+            </Center>
+        </GridItem>
+        <GridItem boxShadow="dark-lg" rowSpan={4} colSpan={4} borderWidth="1px" borderRadius="lg" p={4}>
+          <Heading as="h5" size="sm">
+            Gráfico de área
+          </Heading>
+          <AreaChart />
+        </GridItem>
+        <GridItem boxShadow="dark-lg" rowSpan={4} colSpan={4} borderWidth="1px" borderRadius="lg" p={4}>
+          <Heading as="h5" size="sm">
+            Gráfico de área
+          </Heading>
+          <AreaChart />
+        </GridItem>
       </Grid>
     </>
   );
